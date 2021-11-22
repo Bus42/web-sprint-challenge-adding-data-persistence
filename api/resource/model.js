@@ -13,7 +13,7 @@ async function insert(resource) {
     // insert resource into resources table then return the resource
     try {
         const [id] = await db('resources').insert(resource);
-        return await db('resources').where({ resource_id :id });
+        return await db('resources').where({ resource_id :id }).first();
     } catch (error) {
         console.log({ ...error, message: "error inserting resource" });
         return error
