@@ -11,4 +11,11 @@ router.get('/', async (req, res) => {
     }
 });
 
+router.post('/', (req, res) => {
+    // create resource, then return newly created resource from response
+    model.insert(req.body)
+        .then(resource => res.status(201).send(resource))
+        .catch(err => res.status(500).send({ ...err, message: 'Error creating resource' }));
+})
+
 module.exports = router;
