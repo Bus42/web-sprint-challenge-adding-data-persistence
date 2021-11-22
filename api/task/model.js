@@ -9,10 +9,13 @@ async function find() {
 }
 
 async function insert(task) {
-    // insert task into tasks table then return newly created task
-    db.insert(task).into('tasks')
-    return db('tasks')
-        .where('task_description', task.task_description).first();
+    try {
+        const [id] = await db('tasks').insert(task);
+        return await db('tasks').where({ task_id: id }).first();
+    } catch (error) {
+        console.log({ ...error, message: "error inserting task" });
+        return error
+    }
 }
 
 module.exports = {
