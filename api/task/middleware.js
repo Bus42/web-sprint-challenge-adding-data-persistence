@@ -5,8 +5,9 @@ function hasTaskDescription(req, res, next) {
         return res.status(400).send({
             message: 'Task description is required'
         });
+    } else {
+        next();
     }
-    next();
 }
 
 function hasProjectId(req, res, next) {
@@ -14,8 +15,9 @@ function hasProjectId(req, res, next) {
         return res.status(400).send({
             message: 'Project id is required'
         });
+    } else {
+        next();
     }
-    next();
 }
 
 function projectIdIsUnique(req, res, next) {
@@ -27,8 +29,9 @@ function projectIdIsUnique(req, res, next) {
                 return res.status(400).send({
                     message: 'Project id must be unique'
                 });
+            } else {
+                next();
             }
-            next();
         });
 }
 
