@@ -1,8 +1,14 @@
 const express = require('express');
-const resourceRouter = express.Router();
+const router = express.Router();
+const model = require('./model');
 
-resourceRouter.get('/', (req, res) => {
-    res.status(200).send('Hello from /api/resources')
+router.get('/', async (req, res) => {
+    try {
+        const resources = await model.find();
+        res.status(200).send(resources);
+    } catch (err) {
+        res.status(500).send({ ...err, message: 'Error getting resources' });
+    }
 });
 
-module.exports = resourceRouter;
+module.exports = router;
