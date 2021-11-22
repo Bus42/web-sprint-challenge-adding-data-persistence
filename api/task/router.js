@@ -1,8 +1,20 @@
 const express = require('express');
-const taskRouter = express.Router();
+const router = express.Router();
+const model = require('./model');
 
-taskRouter.get('/', (req, res) => {
-    res.status(200).send('Hello from /api/tasks')
+router.get('/', async (req, res) => {
+    try {
+        const tasks = await model.find();
+        res.status(200).send(tasks);
+    } catch (err) {
+        res.status(500).send({ ...err, message: 'Error getting tasks' });
+    }
 });
 
-module.exports = taskRouter;
+router.post('/', (req, res) => {
+    model.insert(req.body)
+        .then(task => res.status(201).send(task))
+        .catch(err => res.status(500).send({ ...err, message: 'Error creating task' }));
+})
+
+module.exports = router;
