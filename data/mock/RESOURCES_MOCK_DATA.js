@@ -1,0 +1,22 @@
+const mockResources = [{ "resource_id": 1, "resource_name": "com.aol.Aerified", "resource_description": "2-750 - Concrete Pads and Walks" },
+{ "resource_id": 2, "resource_name": "com.washingtonpost.Bytecard", "resource_description": "11-700 - Medical Equipment" },
+{ "resource_id": 3, "resource_name": "com.sciencedaily.Duobam", "resource_description": "15-200 - Process Piping" },
+{ "resource_id": 4, "resource_name": "uk.co.webeden.Quo Lux", "resource_description": null },
+{ "resource_id": 5, "resource_name": "com.patch.Subin", "resource_description": "9-680 - Carpet" },
+{ "resource_id": 6, "resource_name": "ca.google.Aerified", "resource_description": "15-950 - Testing, Adjusting, and Balancing" },
+{ "resource_id": 7, "resource_name": "com.dell.Rank", "resource_description": "6-100 - Rough Carpentry" },
+{ "resource_id": 8, "resource_name": "com.skyrock.Tempsoft", "resource_description": "2-850 - Bridges/Footbridges" },
+{ "resource_id": 9, "resource_name": "uk.co.dailymail.Voyatouch", "resource_description": "13-100 - Lightning Protection" },
+{ "resource_id": 10, "resource_name": "com.instagram.Mat Lam Tam", "resource_description": "12-100 - Art" },
+{ "resource_id": 11, "resource_name": "com.skype.Latlux", "resource_description": "9-680 - Carpet" },
+{ "resource_id": 12, "resource_name": "com.bandcamp.Sonsing", "resource_description": "11-850 - Navigation Equipment" },
+{ "resource_id": 13, "resource_name": "com.mac.Tres-Zap", "resource_description": "2-924 - Sodding" },
+{ "resource_id": 14, "resource_name": "com.over-blog.Tempsoft", "resource_description": "2-320 - Excavation and Fill" },
+{ "resource_id": 15, "resource_name": "pl.google.Tresom", "resource_description": "12-500 - Furniture" },
+{ "resource_id": 16, "resource_name": "com.acquirethisname.Alphazap", "resource_description": "8-400 - Entrances and Storefronts" },
+{ "resource_id": 17, "resource_name": "com.howstuffworks.Daltfresh", "resource_description": "3-600 - Grouts" },
+{ "resource_id": 18, "resource_name": "com.goodreads.Flexidy", "resource_description": null },
+{ "resource_id": 19, "resource_name": "com.dailymotion.Flowdesk", "resource_description": "2-780 - Clay Unit Pavers" },
+{ "resource_id": 20, "resource_name": "co.g.Overhold", "resource_description": "2-924 - Sodding" }]
+
+module.exports = mockResources;
