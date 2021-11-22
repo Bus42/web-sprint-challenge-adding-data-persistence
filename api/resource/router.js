@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const model = require('./model');
+const { resourceNameIsUnique } = require('./middleware');
 
 router.get('/', async (req, res) => {
     try {
@@ -11,7 +12,7 @@ router.get('/', async (req, res) => {
     }
 });
 
-router.post('/', (req, res) => {
+router.post('/', resourceNameIsUnique, (req, res) => {
     console.log(req.body);
     model.insert(req.body)
         .then(resource => {
