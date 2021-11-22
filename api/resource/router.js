@@ -12,9 +12,12 @@ router.get('/', async (req, res) => {
 });
 
 router.post('/', (req, res) => {
-    // create resource, then return newly created resource from response
+    console.log(req.body);
     model.insert(req.body)
-        .then(resource => res.status(201).send(resource))
+        .then(resource => {
+            console.log(resource);
+            return res.status(201).send(resource)
+        })
         .catch(err => res.status(500).send({ ...err, message: 'Error creating resource' }));
 })
 

@@ -1,4 +1,3 @@
-// build your `Resource` model here
 const db = require('../../data/dbConfig');
 
 async function find() {
@@ -11,12 +10,10 @@ async function find() {
 }
 
 async function insert(resource) {
+    // insert resource into resources table then return the resource
     try {
-        // create a new resource, then return the newly create resource
-        db.insert(resource).into('resources');
-        return await db('resources')
-            .where('resource_name', resource.resource_name)
-            .first();
+        const [id] = await db('resources').insert(resource);
+        return await db('resources').where({ resource_id :id });
     } catch (error) {
         console.log({ ...error, message: "error inserting resource" });
         return error
