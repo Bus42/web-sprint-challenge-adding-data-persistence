@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const model = require('./model');
+const {validateProjectName} = require('./middleware')
 
 router.get('/', async (req, res) => {
     try {
@@ -13,7 +14,7 @@ router.get('/', async (req, res) => {
     }
 });
 
-router.post('/', (req, res) => {
+router.post('/', validateProjectName, (req, res) => {
     console.log(req.body);
     model.insert(req.body)
         .then(project => res.status(201).send(project))
